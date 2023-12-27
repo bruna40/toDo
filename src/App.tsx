@@ -1,7 +1,13 @@
+import { TodoForm } from './components/TodoForm'
+import { GlobalStyle } from './style/global'
+
 function App() {
   return (
-    <h1> Hello World!</h1>
-  )
+    <>
+      <TodoForm />
+      <GlobalStyle />
+    </>
+  ) 
 }
 
 export default App
