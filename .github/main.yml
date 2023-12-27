@@ -1,0 +1,25 @@
+name: Run E2E tests
+
+on: push
+
+jobs:
+    cypress-run:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            
+
+            - name: Install Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 18
+                cache: 'npm'
+
+            - run: npm ci
+
+            - name: Cypress run
+              uses: cypress-io/github-action@v6
+              with:
+                start: npm run dev
+                test: npx cypress run
