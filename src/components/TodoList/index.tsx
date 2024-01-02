@@ -1,5 +1,5 @@
 import { TodoItem } from '../TodoItem'
-import { ContainerList, TaskInformation } from './style'
+import { ContainerList, TaskInformation, ItemList } from './style'
 
 export function TodoList() {
   return (
@@ -14,13 +14,13 @@ export function TodoList() {
           <p>1 de 2</p>
         </div>
       </TaskInformation>
-      <ul>
+      <ItemList>
         <TodoItem />
         <TodoItem />
         <TodoItem />
         <TodoItem />
         <TodoItem />
-      </ul>
+      </ItemList>
     </ContainerList>
   )
 }

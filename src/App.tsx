@@ -11,7 +11,7 @@ function App() {
       <TodoList />
       <GlobalStyle />
     </>
-  ) 
+  )
 }
 
 export default App

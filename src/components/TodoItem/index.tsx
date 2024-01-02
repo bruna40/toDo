@@ -1,11 +1,11 @@
 import { Trash } from 'lucide-react'
-import { ContainerItem } from './style'
+import { ContainerItem, ContainerInput } from './style'
 
 export function TodoItem() {
   return (
     <ContainerItem>
-      <input type="checkbox" />
-      <span>Estudar React</span>
+      <ContainerInput type="checkbox" />
+      <p>Estudar React</p>
       <button type="button">
         <Trash size={20} />
       </button>
