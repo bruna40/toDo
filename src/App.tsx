@@ -1,6 +1,16 @@
+import { Header } from './components/Header'
+import { TodoForm } from './components/TodoForm'
+import { TodoList } from './components/TodoList'
+import { GlobalStyle } from './style/global'
+
 function App() {
   return (
-    <h1> Hello World!</h1>
+    <>
+      <Header />
+      <TodoForm />
+      <TodoList />
+      <GlobalStyle />
+    </>
   )
 }
 
