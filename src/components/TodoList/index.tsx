@@ -1,25 +1,30 @@
+import { useContext } from 'react'
 import { TodoItem } from '../TodoItem'
 import { ContainerList, TaskInformation, ItemList } from './style'
+import { ListContext } from '../../contexts/List'
 
 export function TodoList() {
+  const { tasks, tasksCompleted } = useContext(ListContext)
+
+  const tasksCompletedLength = tasksCompleted()
   return (
     <ContainerList>
       <TaskInformation>
         <div>
           <h6>Tarefas criadas</h6>
-          <p>1</p>
+          <p>{tasks.length}</p>
         </div>
         <div>
           <h6>Concluídas</h6>
-          <p>1 de 2</p>
+          <p>
+            {tasksCompletedLength} de {tasks.length}
+          </p>
         </div>
       </TaskInformation>
       <ItemList>
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
+        {tasks.map((task) => (
+          <TodoItem key={task.id} id={task.id} />
+        ))}
       </ItemList>
     </ContainerList>
   )
