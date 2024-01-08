@@ -4,7 +4,7 @@ import { ContainerHeader } from './style'
 export function Header() {
   return (
     <ContainerHeader>
-      <img src={toDo} alt="To Do" />
+      <img src={toDo} alt="Logo do To Do" />
     </ContainerHeader>
   )
 }

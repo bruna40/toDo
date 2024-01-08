@@ -11,8 +11,6 @@ interface List {
   createNewTask(tasks: string): void
   toggleTask(id: number): void
   deleteComment(id: number): void
-  getById(id: number): ToDo | undefined
-  // tasksCompleted(): number
 }
 
 interface ListContextProviderProps {
@@ -25,9 +23,7 @@ export function ListProvider({ children }: ListContextProviderProps) {
   const [tasks, setTasks] = useState<ToDo[]>(() => {
     const storageStateAsJSON = localStorage.getItem('@todo:tasks')
 
-    if (storageStateAsJSON) {
-      return JSON.parse(storageStateAsJSON)
-    }
+    return JSON.parse(storageStateAsJSON || '[]')
   })
 
   function createNewTask(text: string) {
@@ -60,13 +56,6 @@ export function ListProvider({ children }: ListContextProviderProps) {
     setTasks((task) => task.filter((text) => text.id !== id))
   }
 
-  function getById(id: number) {
-    return tasks.find((t) => t.id === id)
-  }
-
-  // function tasksCompleted() {
-  //   return tasks.filter((task) => task.isCompleted).length
-  // }
   return (
     <ListContext.Provider
       value={{
@@ -74,8 +63,6 @@ export function ListProvider({ children }: ListContextProviderProps) {
         createNewTask,
         toggleTask,
         deleteComment,
-        getById,
-        // tasksCompleted,
       }}
     >
       {children}

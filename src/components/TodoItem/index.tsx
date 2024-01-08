@@ -8,21 +8,25 @@ interface ItemProps {
 }
 
 export function TodoItem({ id }: ItemProps) {
-  const { toggleTask, deleteComment, getById } = useContext(ListContext)
-  const toDo = getById(id)
+  const { toggleTask, deleteComment, tasks } = useContext(ListContext)
+  const toDo = (id: number) => tasks.find((t) => t.id === id)
 
-  if (!toDo) return null
+  const Tasks = toDo(id)
+
+  if (!Tasks) return null
   return (
     <ContainerItem>
       <ContainerInput
         type="checkbox"
-        onClick={() => toggleTask(toDo.id)}
-        checked={toDo.isCompleted}
+        onClick={() => toggleTask(Tasks.id)}
+        checked={Tasks.isCompleted}
       />
-      <p style={{ textDecoration: toDo.isCompleted ? 'line-through' : 'none' }}>
-        {toDo.text}
+      <p
+        style={{ textDecoration: Tasks.isCompleted ? 'line-through' : 'none' }}
+      >
+        {Tasks.text}
       </p>
-      <button type="button" onClick={() => deleteComment(toDo.id)}>
+      <button type="button" onClick={() => deleteComment(Tasks.id)}>
         <Trash size={20} />
       </button>
     </ContainerItem>
