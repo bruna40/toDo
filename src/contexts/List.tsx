@@ -12,7 +12,7 @@ interface List {
   toggleTask(id: number): void
   deleteComment(id: number): void
   getById(id: number): ToDo | undefined
-  tasksCompleted(): number
+  // tasksCompleted(): number
 }
 
 interface ListContextProviderProps {
@@ -64,9 +64,9 @@ export function ListProvider({ children }: ListContextProviderProps) {
     return tasks.find((t) => t.id === id)
   }
 
-  function tasksCompleted() {
-    return tasks.filter((task) => task.isCompleted).length
-  }
+  // function tasksCompleted() {
+  //   return tasks.filter((task) => task.isCompleted).length
+  // }
   return (
     <ListContext.Provider
       value={{
@@ -75,7 +75,7 @@ export function ListProvider({ children }: ListContextProviderProps) {
         toggleTask,
         deleteComment,
         getById,
-        tasksCompleted,
+        // tasksCompleted,
       }}
     >
       {children}

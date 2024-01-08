@@ -4,9 +4,9 @@ import { ContainerList, TaskInformation, ItemList } from './style'
 import { ListContext } from '../../contexts/List'
 
 export function TodoList() {
-  const { tasks, tasksCompleted } = useContext(ListContext)
+  const { tasks } = useContext(ListContext)
 
-  const tasksCompletedLength = tasksCompleted()
+  // const tasksCompletedLength = tasksCompleted()
   return (
     <ContainerList>
       <TaskInformation>
@@ -16,9 +16,7 @@ export function TodoList() {
         </div>
         <div>
           <h6>Concluídas</h6>
-          <p>
-            {tasksCompletedLength} de {tasks.length}
-          </p>
+          <p>1 de {tasks.length}</p>
         </div>
       </TaskInformation>
       <ItemList>
