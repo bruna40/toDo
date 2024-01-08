@@ -8,7 +8,7 @@ export const ContainerForm = styled.form`
   gap: 0.5rem;
 
   input {
-    max-width: 16rem;
+    min-width: 16rem;
     height: 3.4rem;
     background: var(--gray-500);
     border-radius: 0.5rem;
@@ -24,7 +24,7 @@ export const ContainerForm = styled.form`
     }
 
     @media (min-width: 50em) {
-      max-width: 40rem;
+      min-width: 40rem;
     }
   }
 
@@ -44,12 +44,6 @@ export const ContainerForm = styled.form`
 
     &:hover {
       background: var(--blue);
-    }
-  }
-
-  @media (min-width: 50em) {
-    input {
-      max-width: 40rem;
     }
   }
 `
