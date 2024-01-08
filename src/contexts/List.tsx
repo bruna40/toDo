@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 
 type ToDo = {
   id: number
@@ -22,7 +22,13 @@ interface ListContextProviderProps {
 export const ListContext = createContext({} as List)
 
 export function ListProvider({ children }: ListContextProviderProps) {
-  const [tasks, setTasks] = useState<ToDo[]>([])
+  const [tasks, setTasks] = useState<ToDo[]>(() => {
+    const storageStateAsJSON = localStorage.getItem('@todo:tasks')
+
+    if (storageStateAsJSON) {
+      return JSON.parse(storageStateAsJSON)
+    }
+  })
 
   function createNewTask(text: string) {
     const newList: ToDo = {
@@ -32,6 +38,10 @@ export function ListProvider({ children }: ListContextProviderProps) {
     }
     setTasks([...tasks, newList])
   }
+
+  useEffect(() => {
+    localStorage.setItem('@todo:tasks', JSON.stringify(tasks))
+  }, [tasks])
 
   function toggleTask(id: number) {
     setTasks((task) =>
