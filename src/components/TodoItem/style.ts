@@ -45,7 +45,7 @@ export const ContainerItem = styled.li`
     width: 100%;
     text-align: left;
     color: var(--white);
-    margin-left: 16px;
+    margin-left: 1rem;
     overflow: auto;
     font-weight: bold;
   }
@@ -55,5 +55,6 @@ export const ContainerItem = styled.li`
   }
 
   @media (min-width: 50em) {
+    min-width: 46rem;
   }
 `
