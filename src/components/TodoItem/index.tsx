@@ -14,7 +14,11 @@ export function TodoItem({ id }: ItemProps) {
   if (!toDo) return null
   return (
     <ContainerItem>
-      <ContainerInput type="checkbox" onClick={() => toggleTask(toDo.id)} />
+      <ContainerInput
+        type="checkbox"
+        onClick={() => toggleTask(toDo.id)}
+        checked={toDo.isCompleted}
+      />
       <p style={{ textDecoration: toDo.isCompleted ? 'line-through' : 'none' }}>
         {toDo.text}
       </p>
