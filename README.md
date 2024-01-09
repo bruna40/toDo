@@ -28,4 +28,5 @@
 - Adicionar tarefa
 - Remover tarefa
 - Marcar tarefa como concluída
+- Adicionar a tarefa ao localstorage
 
