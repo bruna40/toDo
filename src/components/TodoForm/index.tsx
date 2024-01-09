@@ -23,8 +23,13 @@ export function TodoForm() {
         type="text"
         placeholder="Digite uma tarefa"
         onChange={(e) => setTask(e.target.value)}
+        data-test="input-add-task"
       />
-      <button type="submit" disabled={isNewTaskEmpty}>
+      <button
+        type="submit"
+        disabled={isNewTaskEmpty}
+        data-test="button-create-task"
+      >
         Criar <PlusCircle size={20} />
       </button>
     </ContainerForm>

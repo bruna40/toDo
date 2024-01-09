@@ -21,7 +21,7 @@ export function TodoList() {
         </div>
         <div>
           <h6>Concluídas</h6>
-          <p>
+          <p data-test="task-done-length">
             {teste} de {tasks.length}
           </p>
         </div>
