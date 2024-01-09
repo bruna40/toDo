@@ -4,7 +4,7 @@
 
 <div style="display: flex;  flex-direction:row; ">
   <img src="mobile.png"  width="350"  style="margin-right: 100px;">
-  <img src="desktop.png" width="600" >
+  <img src="desktop.png" width="500" >
 </div>
 
 
@@ -22,3 +22,10 @@
 - TypeScript
 - Cypress
 - Styled-components
+
+### Funcionalidades:
+
+- Adicionar tarefa
+- Remover tarefa
+- Marcar tarefa como concluída
+
