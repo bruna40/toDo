@@ -1,7 +1,7 @@
 # To Do List
 
 ### Design
-
-![Texto alternativo](desktop.png)
-
-![Texto alternativo](mobile.png)
+<div style="display: flex; justify-content: center;">
+  <img src="mobile.png" width="400" style="margin-right: 10px;">
+  <img src="desktop.png" width="400">
+</div>
