@@ -23,10 +23,15 @@ export function TodoItem({ id }: ItemProps) {
       />
       <p
         style={{ textDecoration: Tasks.isCompleted ? 'line-through' : 'none' }}
+        data-test="task"
       >
         {Tasks.text}
       </p>
-      <button type="button" onClick={() => deleteComment(Tasks.id)}>
+      <button
+        type="button"
+        onClick={() => deleteComment(Tasks.id)}
+        data-test="button-remove-task"
+      >
         <Trash size={20} />
       </button>
     </ContainerItem>
